@@ -20,7 +20,7 @@ script:
     # Make sure the Docker services are running in your local machine
     # Remove unused and dangling images
   # - docker image prune --all
-  - docker-compose -f docker-compose-build.yaml build --parallel
+  - docker-compose -f docker-compose-build.yaml build
   # - docker-compose -f docker-compose-build.yaml push
 
 after_success:
