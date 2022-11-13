@@ -21,8 +21,11 @@ script:
     # Remove unused and dangling images
   - docker image prune --all
   - docker-compose -f docker-compose-build.yaml build --parallel
-  - docker-compose -f docker-compose-build.yaml push
+  # - docker-compose -f docker-compose-build.yaml push
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push YOUR_DOCKER_HUB/simple-node
+  - docker push malmokadem/reverseproxy:v1
+  - docker push malmokadem/udagram-api-feed:v1
+  - docker push malmokadem/udagram-api-user:v1
+  - docker push malmokadem/udagram-frontend::v1
