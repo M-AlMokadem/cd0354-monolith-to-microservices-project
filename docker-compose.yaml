@@ -1,7 +1,7 @@
 version: "3"
 services:
   reverseproxy:
-    image: malmokadem/reverseproxy:v1
+    image: malmokadem/reverseproxy:v2
     ports:
       - 8080:8080
     restart: always
@@ -9,7 +9,7 @@ services:
       - backend-user
       - backend-feed
   backend-user:
-    image: malmokadem/udagram-api-user:v1
+    image: malmokadem/udagram-api-user:v2
     environment:
       POSTGRES_USERNAME: $POSTGRES_USERNAME
       POSTGRES_PASSWORD: $POSTGRES_PASSWORD
@@ -21,7 +21,7 @@ services:
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
   backend-feed:
-    image: malmokadem/udagram-api-feed:v1
+    image: malmokadem/udagram-api-feed:v2
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
@@ -35,6 +35,6 @@ services:
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
   frontend:
-    image: malmokadem/udagram-frontend:v1
+    image: malmokadem/udagram-frontend:v2
     ports:
       - "8100:80"
