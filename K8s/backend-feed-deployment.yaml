@@ -15,7 +15,7 @@ spec:
         app: udagram-api-feed
     spec:
       containers:
-      - image: malmokadem/udagram-api-feed
+      - image: malmokadem/udagram-api-feed:v2
         name: udagram-api-feed
         imagePullPolicy: Always  
         resources:
