@@ -2,22 +2,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: frontend
-  name: frontend
+    app: udagram-frontend
+  name: udagram-frontend
 spec:
   replicas: 2
   selector: 
     matchLabels:
-      app: frontend
+      app: udagram-frontend
   template:
     metadata:
       labels:
-        app: frontend
+        app: udagram-frontend
         api: external        
     spec:
       containers:
-      - image: malmokadem/udagram-frontend
-        name: frontend
+      - image: malmokadem/udagram-udagram-frontend
+        name: udagram-frontend
         imagePullPolicy: Always          
         ports:
         - containerPort: 80
