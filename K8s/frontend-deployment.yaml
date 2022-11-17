@@ -16,7 +16,7 @@ spec:
         api: external        
     spec:
       containers:
-      - image: malmokadem/udagram-udagram-frontend
+      - image: malmokadem/udagram-udagram-frontend:v2
         name: udagram-frontend
         imagePullPolicy: Always          
         ports:
