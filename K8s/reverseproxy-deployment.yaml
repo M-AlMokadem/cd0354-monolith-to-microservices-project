@@ -6,7 +6,7 @@ metadata:
   name: reverseproxy
 spec:
   replicas: 1
-  selector: 
+  selector:
     matchLabels:
       app: reverseproxy
   template:
@@ -15,16 +15,16 @@ spec:
         app: reverseproxy
     spec:
       containers:
-      - image: malmokadem/reverseproxy:v2
-        name: reverseproxy
-        imagePullPolicy: Always          
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "250m"
-          limits:
-            memory: "1024Mi"
-            cpu: "500m"       
-        ports:
-        - containerPort: 8080
+        - image: malmokadem/reverseproxy:v2
+          name: reverseproxy
+          imagePullPolicy: Always
+          # resources:
+          #   requests:
+          #     memory: "64Mi"
+          #     cpu: "250m"
+          #   limits:
+          #     memory: "1024Mi"
+          #     cpu: "500m"
+          ports:
+            - containerPort: 8080
       restartPolicy: Always
