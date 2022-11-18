@@ -14,6 +14,10 @@ spec:
       labels:
         app: udagram-api-user
     spec:
+      volumes:
+      - name: aws-secret
+        secret:
+          secretName: aws-secret
       containers:
       - image: malmokadem/udagram-api-user:v2
         name: udagram-api-user 
@@ -24,7 +28,11 @@ spec:
             cpu: "250m"
           limits:
             memory: "1024Mi"
-            cpu: "500m"      
+            cpu: "500m"  
+        volumeMounts:
+        - name: aws-secret
+          mountPath: "/root/.aws/"
+          readOnly: true  
         env:
         - name: URL
           valueFrom:
@@ -57,3 +65,4 @@ spec:
               name: env-secret
               key: POSTGRES_USERNAME
       restartPolicy: Always
+    
