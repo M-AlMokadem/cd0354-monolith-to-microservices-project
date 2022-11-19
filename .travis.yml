@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - 14.15
+  - 12
 
 services:
   - docker
@@ -17,8 +17,8 @@ script:
   #- docker --version # print the version for logging
   #- docker build -t simple-node .
   #- docker tag simple-node YOUR_DOCKER_HUB/simple-node:latest
-    # Make sure the Docker services are running in your local machine
-    # Remove unused and dangling images
+  # Make sure the Docker services are running in your local machine
+  # Remove unused and dangling images
   # - docker image prune --all
   - docker-compose -f docker-compose-build.yaml build --parallel
   # - docker-compose -f docker-compose-build.yaml push
