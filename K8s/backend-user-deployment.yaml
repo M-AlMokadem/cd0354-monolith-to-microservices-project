@@ -29,7 +29,7 @@ spec:
               memory: "64Mi"
               cpu: "250m"
             limits:
-              memory: "50Mi"
+              memory: "64Mi"
               cpu: "250m"
           volumeMounts:
             - name: aws-secret
