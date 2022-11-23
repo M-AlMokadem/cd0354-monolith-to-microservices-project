@@ -21,16 +21,16 @@ spec:
       containers:
         - image: malmokadem/udagram-api-user:v2
           name: udagram-api-user
-          imagePullPolicy: Always
+          # imagePullPolicy: Always
           ports:
             - containerPort: 8080
-          resources:
-            requests:
-              memory: "64Mi"
-              cpu: "250m"
-            limits:
-              memory: "64Mi"
-              cpu: "250m"
+          # resources:
+          #   requests:
+          #     memory: "64Mi"
+          #     cpu: "250m"
+          #   limits:
+          #     memory: "64Mi"
+          #     cpu: "250m"
           volumeMounts:
             - name: aws-secret
               mountPath: /root/.aws/
@@ -71,4 +71,4 @@ spec:
           #     secretKeyRef:
           #       name: env-secret
           #       key: POSTGRES_USERNAME
-      # restartPolicy: Always
+      restartPolicy: Always
