@@ -15,4 +15,4 @@ services:
   frontend:
     build:
       context: ./udagram-frontend
-    image: malmokadem/udagram-frontend:v4
+    image: malmokadem/udagram-frontend:v5
