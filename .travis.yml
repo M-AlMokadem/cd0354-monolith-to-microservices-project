@@ -28,4 +28,4 @@ after_success:
   - docker push malmokadem/reverseproxy:v2
   - docker push malmokadem/udagram-api-feed:v2
   - docker push malmokadem/udagram-api-user:v2
-  - docker push malmokadem/udagram-frontend:v5
+  - docker push malmokadem/udagram-frontend:v6
