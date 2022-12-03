@@ -1,7 +1,7 @@
 version: "3"
 services:
   reverseproxy:
-    image: malmokadem/reverseproxy:v2
+    image: malmokadem/reverseproxy:v3
     ports:
       - 8080:8080
     restart: always

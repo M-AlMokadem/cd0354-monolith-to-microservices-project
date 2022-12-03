@@ -15,7 +15,7 @@ spec:
         app: reverseproxy
     spec:
       containers:
-        - image: malmokadem/reverseproxy:v2
+        - image: malmokadem/reverseproxy:v3
           name: reverseproxy
           imagePullPolicy: Always
           # resources:
